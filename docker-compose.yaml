@@ -1,0 +1,10 @@
+services:
+  return_to_moria:
+    build: .
+    container_name: return_to_moria
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: / # Path to the data folder
+        target: /home/steam/game
+    network_mode: "host"
